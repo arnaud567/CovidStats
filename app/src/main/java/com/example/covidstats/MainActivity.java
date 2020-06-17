@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     @Override
                     public void onFailure(Call<GlobalData> call, Throwable t) {
-                        System.out.println(t);
+                        textView.setText(t.getMessage());
                     }
                 });
     }

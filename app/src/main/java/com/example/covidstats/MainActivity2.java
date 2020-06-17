@@ -41,7 +41,8 @@ public class MainActivity2 extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<CountryData> call, Throwable t) {
-                        System.out.println(t);
+                        textView.setText("Erreur");
+                        textView2.setText(t.getMessage());
                     }
                 });
     }
