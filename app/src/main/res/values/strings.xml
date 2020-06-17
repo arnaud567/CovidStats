@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CovidStats</string>
+    <string name="entrer_un_pays">Entrer un pays</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="stats_globales">Stats globales</string>
+    <string name="chargement">Chargement</string>
 </resources>
