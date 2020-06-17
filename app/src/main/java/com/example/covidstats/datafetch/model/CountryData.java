@@ -141,19 +141,20 @@ public class CountryData{
     @NonNull
     @Override
     public String toString() {
-        return "CountryData{" +
-                "country = '" + country + '\'' +
-                ",recovered = '" + recovered + '\'' +
-                ",cases = '" + cases + '\'' +
-                ",critical = '" + critical + '\'' +
-                ",deathsPerOneMillion = '" + deathsPerOneMillion + '\'' +
-                ",active = '" + active + '\'' +
-                ",casesPerOneMillion = '" + casesPerOneMillion + '\'' +
-                ",deaths = '" + deaths + '\'' +
-                ",testsPerOneMillion = '" + testsPerOneMillion + '\'' +
-                ",todayCases = '" + todayCases + '\'' +
-                ",todayDeaths = '" + todayDeaths + '\'' +
-                ",totalTests = '" + totalTests + '\'' +
-                '}';
+//        return "CountryData{" +
+//                "country = '" + country + '\'' +
+//                ",recovered = '" + recovered + '\'' +
+//                ",cases = '" + cases + '\'' +
+//                ",critical = '" + critical + '\'' +
+//                ",deathsPerOneMillion = '" + deathsPerOneMillion + '\'' +
+//                ",active = '" + active + '\'' +
+//                ",casesPerOneMillion = '" + casesPerOneMillion + '\'' +
+//                ",deaths = '" + deaths + '\'' +
+//                ",testsPerOneMillion = '" + testsPerOneMillion + '\'' +
+//                ",todayCases = '" + todayCases + '\'' +
+//                ",todayDeaths = '" + todayDeaths + '\'' +
+//                ",totalTests = '" + totalTests + '\'' +
+//                '}';
+        return "Nombre total de cas : " + cases + ".\nNombre total de morts : " + deaths + ".\nNombre total de guéris : " + recovered + ".";
     }
 }
