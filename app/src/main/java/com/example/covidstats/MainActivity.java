@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.covidstats.datafetch.CovidApi;
@@ -23,12 +24,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView;
     EditText editText;
     Button button;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textview);
+        progressBar = findViewById(R.id.progressBar);
         editText = findViewById(R.id.editTextCountry);
         button = findViewById(R.id.button);
         button.setOnClickListener(this);
@@ -42,11 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onResponse(Call<GlobalData> call, Response<GlobalData> response) {
                         textView.setText(response.body().toString());
+                        progressBar.setVisibility(View.GONE);
                     }
 
                     @Override
                     public void onFailure(Call<GlobalData> call, Throwable t) {
                         textView.setText(t.getMessage());
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
     }

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.covidstats.datafetch.CovidApi;
@@ -18,12 +20,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity2 extends AppCompatActivity {
     TextView textView, textView2;
     String country;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         textView = findViewById(R.id.textview4);
         textView2 = findViewById(R.id.textview3);
+        progressBar = findViewById(R.id.progressBar2);
         Intent intent = getIntent();
         country = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         Retrofit retrofit = new Retrofit.Builder()
@@ -37,12 +41,14 @@ public class MainActivity2 extends AppCompatActivity {
                     public void onResponse(Call<CountryData> call, Response<CountryData> response) {
                         textView2.setText(response.body().toString());
                         textView.setText(country);
+                        progressBar.setVisibility(View.GONE);
                     }
 
                     @Override
                     public void onFailure(Call<CountryData> call, Throwable t) {
                         textView.setText("Erreur");
                         textView2.setText(t.getMessage());
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
     }
